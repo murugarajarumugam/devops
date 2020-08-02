@@ -4,26 +4,10 @@ pipeline {
     stages {
         stage('Code') {
             steps {
-                echo 'Building..'
+                build job:  'code'
             }
         }
-        stage('Build') {
-            steps {
-                echo 'Building..'
-            }
-        }
-        stage('Test') {
-            steps {
-                echo 'Testing....'
-            }
-        }
-
-	stage('Deployment') {
-            steps {
-                echo 'Deploying....'
-            }
-        }
-
+      
     }
 
 }
