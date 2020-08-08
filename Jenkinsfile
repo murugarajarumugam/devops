@@ -1,8 +1,9 @@
 pipeline {
-    agent {centos}
+    agent none
 
     stages {
         stage('Code') {
+	agent {label 'centos'}
             steps {
                 build job:  'Code'
 		echo "Coding"
@@ -10,13 +11,15 @@ pipeline {
         }
       
 	stage('Build') {
-            steps {
+        agent {label 'centos'}
+	    steps {
                 build job:  'Build'
 		echo "Building"
             }
         }
 
 	stage('Test') {
+	agent {label 'centos'}
             steps {
                 build job:  'Test'
 		echo "Testing"
@@ -24,6 +27,7 @@ pipeline {
         }
 
 	stage('Deploy') {
+	agent {label 'centos'}
             steps {
                 build job:  'Deployment'
 		echo "Deploying"
