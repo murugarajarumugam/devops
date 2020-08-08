@@ -11,7 +11,7 @@ pipeline {
         }
       
 	stage('Build') {
-        agent {label 'centos'}
+        agent {label 'master'}
 	    steps {
                 build job:  'Build'
 		echo "Building"
@@ -19,7 +19,7 @@ pipeline {
         }
 
 	stage('Test') {
-	agent {label 'centos'}
+	agent {label 'master'}
             steps {
                 build job:  'Test'
 		echo "Testing"
@@ -27,7 +27,7 @@ pipeline {
         }
 
 	stage('Deploy') {
-	agent {label 'centos'}
+	agent {label 'master'}
             steps {
                 build job:  'Deployment'
 		echo "Deploying"
