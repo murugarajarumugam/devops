@@ -1,5 +1,5 @@
 pipeline {
-    agent centos
+    agent {centos}
 
     stages {
         stage('Code') {
