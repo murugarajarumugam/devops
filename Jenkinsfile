@@ -3,7 +3,7 @@ pipeline {
 
     stages {
         stage('Code') {
-	agent {label 'centos'}
+	agent {label 'master'}
             steps {
                 build job:  'Code'
 		echo "Coding"
